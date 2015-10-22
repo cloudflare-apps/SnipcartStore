@@ -1,6 +1,8 @@
 (function(){
+  var prefix = 'snip-cart';
+
   var createEl = function(name) {
-    return document.createElement('snip-cart-' + name);
+    return document.createElement(prefix + '-' + name);
   };
 
   var setupSnipCart = function(options) {
@@ -19,27 +21,67 @@
     document.head.appendChild(script);
   };
 
+  var setupStyle = function(options) {
+    var style = document.createElement('style');
+    style.innerHTML = (
+      'snip-cart-store snip-cart-product.snip-cart-product-not-placeholder a.snip-cart-product-link:hover {' +
+        'box-shadow: 0 0 0 1px ' + options.accentColor + ' !important;' +
+        'color: ' + options.accentColor + ' !important' +
+      '}'
+    );
+    document.head.appendChild(style);
+  };
+
   var setupStore = function(options) {
     var containerEl = Eager.createElement(options.container);
     var storeEl = createEl('store');
+    var numColumns = Math.max(1, Math.min(options.numColumns, 10)) || 3;
+    storeEl.setAttribute('data-snip-cart-store-columns', numColumns);
     containerEl.appendChild(storeEl);
 
-    for (var i = 0; i < options.products.length; i++) {
-      var product = options.products[i];
+    var numberOfProductCells = Math.ceil(options.products.length / numColumns) * numColumns;
+
+    for (var i = 0; i < numberOfProductCells; i++) {
       var productEl = createEl('product');
       storeEl.appendChild(productEl);
 
-      var img = document.createElement('img');
-      img.src = product.src;
-      productEl.appendChild(img);
+      var productLink = document.createElement('a');
+      productLink.className = prefix + '-product-link';
+      productEl.appendChild(productLink);
+
+      var imageEl = createEl('product-image');
+      productLink.appendChild(imageEl);
+
+      if (i < options.products.length) {
+        productEl.className = 'snip-cart-product-not-placeholder';
+        var product = options.products[i];
+      } else {
+        var product = { title: '&nbsp;', price: '&nbsp;' };
+      }
+
+      if (product.src) {
+        var img = document.createElement('img');
+        img.className = prefix + '-product-img';
+        img.src = product.src;
+        img.onerror = function() {
+          img.style.opacity = '0 !important';
+        };
+        imageEl.appendChild(img);
+      }
 
       var titleEl = createEl('product-title');
       titleEl.innerHTML = product.title;
-      productEl.appendChild(titleEl);
+      productLink.appendChild(titleEl);
 
       var priceEl = createEl('product-price');
-      priceEl.appendChild(document.createTextNode(product.price));
-      productEl.appendChild(priceEl);
+      var priceHTML = product.price;
+      if (priceHTML === 0) {
+        priceHTML = 'Free';
+      } else if (!isNaN(priceHTML)) {
+        priceHTML = '$' + priceHTML;
+      }
+      priceEl.innerHTML = priceHTML;
+      productLink.appendChild(priceEl);
 
       storeEl.appendChild(productEl);
     }
@@ -53,10 +95,11 @@
     }
   };
 
-  window.EagerSnipCart = {
+  window.SnipCartStore = {
     init: function(options) {
       ready(function(){
         setupSnipCart(options);
+        setupStyle(options);
         setupStore(options);
       });
     }

@@ -15,7 +15,7 @@
       },
       {
         "type": "script",
-        "contents": "EagerSnipCart.init(INSTALL_OPTIONS)"
+        "contents": "SnipCartStore.init(INSTALL_OPTIONS)"
       }
     ]
   },
@@ -25,21 +25,39 @@
   "options": {
     "properties": {
       "apiKey": {
-        "order": 0,
+        "order": 1,
         "title": "API Key",
         "description": "Get this from <strong><a href=\"https://app.snipcart.com/dashboard/account/credentials\" target=\"_blank\" class=\"more with-inherited-color\">SnipCart’s Account Credentials page</a></strong>",
         "type": "string",
         "default": "YTNjYWVlODUtNzNhYi00ZWYzLTk2ODctYWZiOTRhZGFjMDg1"
       },
       "container": {
-        "order": 1,
+        "order": 2,
         "title": "Location",
         "description": "Select where you want the embedded Store to be located.",
         "type": "object",
         "format": "element"
       },
+      "accentColor": {
+        "order": 3,
+        "title": "Accent Color",
+        "type": "string",
+        "format": "color",
+        "placeholder": "#0275d8",
+        "default": "#0275d8"
+      },
+      "numColumns": {
+        "order": 4,
+        "title": "Number of products to show in each row",
+        "description": "Value must be between <strong>1</strong> and <strong>10</strong> inclusive.",
+        "min": 1,
+        "max": 10,
+        "type": "number",
+        "placeholder": 3,
+        "default": 3
+      },
       "products": {
-        "order": 2,
+        "order": 5,
         "title": "Products",
         "type": "array",
         "items": {
@@ -59,8 +77,8 @@
               "title": "Price",
               "description": "Optionally set a price. If blank the price will be listed as “Free”.",
               "type": "number",
-              "placeholder": 0.00,
-              "default": 9.99
+              "placeholder": 19,
+              "default": 19
             },
             "src": {
               "order": 3,
@@ -90,26 +108,6 @@
             "src": "//eager-app-images.imgix.net/VjkeUrBcQTqDgl9HF8ew_magic-trackpad.jpeg"
           }
         ]
-      },
-
-      "useAdvancedOptions": {
-        "order": 3,
-        "title": "Advanced Options",
-        "type": "boolean"
-      },
-      "advancedOptions": {
-        "order": 4,
-        "showIf": {
-          "useAdvancedOptions": true
-        },
-        "title": "Advanced Options",
-        "type": "object",
-        "properties": {
-          "keepUrlParameters": {
-            "title": "Use full URL (including all query params and hash)",
-            "type": "boolean"
-          }
-        }
       }
     }
   }

@@ -1,3 +1,80 @@
-body {
-  background: red
+snip-cart-store {
+  box-sizing: border-box;
+  background: #fff;
+  padding-top: 1px;
+  padding-left: 1px;
+  display: block
+}
+
+snip-cart-store snip-cart-product {
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 1px;
+  padding-bottom: 1px;
+}
+
+snip-cart-store[data-snip-cart-store-columns="1"] snip-cart-product { width: 100% }
+snip-cart-store[data-snip-cart-store-columns="2"] snip-cart-product { width: 50% }
+snip-cart-store[data-snip-cart-store-columns="3"] snip-cart-product { width: 33.3333% }
+snip-cart-store[data-snip-cart-store-columns="4"] snip-cart-product { width: 25% }
+snip-cart-store[data-snip-cart-store-columns="5"] snip-cart-product { width: 20% }
+snip-cart-store[data-snip-cart-store-columns="6"] snip-cart-product { width: 16.6666% }
+snip-cart-store[data-snip-cart-store-columns="7"] snip-cart-product { width: 14.2857% }
+snip-cart-store[data-snip-cart-store-columns="8"] snip-cart-product { width: 12.5% }
+snip-cart-store[data-snip-cart-store-columns="9"] snip-cart-product { width: 11.1111% }
+snip-cart-store[data-snip-cart-store-columns="10"] snip-cart-product { width: 10% }
+
+snip-cart-store a.snip-cart-product-link {
+  position: relative;
+  box-shadow: 0 0 0 1px #ccc;
+  display: block;
+}
+
+snip-cart-store snip-cart-product.snip-cart-product-not-placeholder a.snip-cart-product-link {
+  cursor: pointer
+}
+
+snip-cart-store a.snip-cart-product-link:hover {
+  z-index: 1
+}
+
+snip-cart-store snip-cart-product-image {
+  box-sizing: content-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%
+}
+
+snip-cart-store img.snip-cart-product-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%
+}
+
+snip-cart-store snip-cart-product-title, snip-cart-store snip-cart-product-price {
+  box-sizing: border-box;
+  color: inherit;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+snip-cart-store snip-cart-product-title {
+  padding-top: 1em;
+  padding-bottom: .25em
+}
+
+snip-cart-store snip-cart-product-price {
+  font-weight: bold;
+  padding-bottom: 1.5em
 }
