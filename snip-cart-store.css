@@ -71,10 +71,12 @@ snip-cart-store snip-cart-product-title, snip-cart-store snip-cart-product-price
 
 snip-cart-store snip-cart-product-title {
   padding-top: 1em;
+  height: 2.5em;
   padding-bottom: .25em
 }
 
 snip-cart-store snip-cart-product-price {
   font-weight: bold;
-  padding-bottom: 1.5em
+  height: 2.5em;
+  padding-bottom: 1.25em
 }

@@ -21,26 +21,35 @@
     document.head.appendChild(script);
   };
 
+  var style = document.createElement('style');
+  document.head.appendChild(style);
   var setupStyle = function(options) {
-    var style = document.createElement('style');
     style.innerHTML = (
       'snip-cart-store snip-cart-product.snip-cart-product-not-placeholder a.snip-cart-product-link:hover {' +
         'box-shadow: 0 0 0 1px ' + options.accentColor + ' !important;' +
         'color: ' + options.accentColor + ' !important' +
       '}'
     );
-    document.head.appendChild(style);
   };
 
+  var storeEl;
   var setupStore = function(options) {
     var containerEl = Eager.createElement(options.container);
-    var storeEl = createEl('store');
-    var numColumns = Math.max(1, Math.min(options.numColumns, 10)) || 3;
+
+    if (storeEl) {
+      var oldContainerEl = storeEl.parentNode;
+      containerEl.appendChild(storeEl);
+      oldContainerEl.parentNode.removeChild(oldContainerEl);
+    } else {
+      storeEl = createEl('store');
+      containerEl.appendChild(storeEl);
+    }
+
+    var numColumns = Math.max(1, Math.min(10, options.numColumns)) || 3;
     storeEl.setAttribute('data-snip-cart-store-columns', numColumns);
-    containerEl.appendChild(storeEl);
+    storeEl.innerHTML = '';
 
     var numberOfProductCells = Math.ceil(options.products.length / numColumns) * numColumns;
-
     for (var i = 0; i < numberOfProductCells; i++) {
       var productEl = createEl('product');
       storeEl.appendChild(productEl);
@@ -56,7 +65,7 @@
         productEl.className = 'snip-cart-product-not-placeholder';
         var product = options.products[i];
       } else {
-        var product = { title: '&nbsp;', price: '&nbsp;' };
+        var product = {};
       }
 
       if (product.src) {
@@ -70,17 +79,22 @@
       }
 
       var titleEl = createEl('product-title');
-      titleEl.innerHTML = product.title;
+      titleEl.innerHTML = product.title || '';
       productLink.appendChild(titleEl);
 
       var priceEl = createEl('product-price');
-      var priceHTML = product.price;
-      if (priceHTML === 0) {
-        priceHTML = 'Free';
-      } else if (!isNaN(priceHTML)) {
-        priceHTML = '$' + priceHTML;
+      if (product.price) {
+        var priceHTML = product.price;
+        if (!isNaN(priceHTML)) {
+          priceHTML = Math.max(0, Math.min(1000000, priceHTML));
+        }
+        if (priceHTML === 0) {
+          priceHTML = 'Free';
+        } else if (!isNaN(priceHTML)) {
+          priceHTML = '$' + priceHTML;
+        }
+        priceEl.innerHTML = priceHTML;
       }
-      priceEl.innerHTML = priceHTML;
       productLink.appendChild(priceEl);
 
       storeEl.appendChild(productEl);
@@ -99,6 +113,12 @@
     init: function(options) {
       ready(function(){
         setupSnipCart(options);
+        setupStyle(options);
+        setupStore(options);
+      });
+    },
+    setOptions: function(options) {
+      ready(function(){
         setupStyle(options);
         setupStore(options);
       });

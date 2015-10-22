@@ -22,6 +22,18 @@
   "dependencies": {
     "github.com/jquery/jquery": ">= 1.9.1, <= 1.10.2"
   },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["apiKey"],
+        "reload": true
+      },
+      {
+        "options": ["container", "accentColor", "numColumns", "products"],
+        "execute": "SnipCartStore.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
   "options": {
     "properties": {
       "apiKey": {
@@ -75,7 +87,7 @@
             "price": {
               "order": 2,
               "title": "Price",
-              "description": "Optionally set a price. If blank the price will be listed as “Free”.",
+              "description": "Optionally set a price. If <strong>0</strong> the price will be listed as “Free”.",
               "type": "number",
               "placeholder": 19,
               "default": 19
@@ -83,6 +95,7 @@
             "src": {
               "order": 3,
               "title": "Image",
+              "description": "Images should have square dimensions.",
               "type": "string",
               "format": "image"
             }
