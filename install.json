@@ -12,6 +12,10 @@
         "depends": {
           "github.com/jquery/jquery:jquery.js": "jQuery"
         }
+      },
+      {
+        "type": "script",
+        "content": "EagerSnipCart.init(INSTALL_OPTIONS)"
       }
     ]
   },

@@ -1,11 +1,9 @@
 (function(){
-  var options = INSTALL_OPTIONS;
-
   var createEl = function(name) {
     return document.createElement('snip-cart-' + name);
   };
 
-  var setupSnipCart = function() {
+  var setupSnipCart = function(options) {
     var style = document.createElement('style');
     style.type = 'text/css';
     style.rel = 'stylesheet';
@@ -21,7 +19,7 @@
     document.head.appendChild(script);
   };
 
-  var setupStore = function() {
+  var setupStore = function(options) {
     var containerEl = Eager.createElement(options.container);
     var storeEl = createEl('store');
     containerEl.appendChild(storeEl);
@@ -55,10 +53,12 @@
     }
   };
 
-  var init = function() {
-    setupSnipCart();
-    setupStore();
+  window.EagerSnipCart = {
+    init: function(options) {
+      ready(function(){
+        setupSnipCart(options);
+        setupStore(options);
+      });
+    }
   };
-
-  ready(init);
 })();
