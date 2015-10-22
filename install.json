@@ -15,7 +15,7 @@
       },
       {
         "type": "script",
-        "content": "EagerSnipCart.init(INSTALL_OPTIONS)"
+        "contents": "EagerSnipCart.init(INSTALL_OPTIONS)"
       }
     ]
   },
