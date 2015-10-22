@@ -1,0 +1,112 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "snip-cart-store.css"
+      },
+      {
+        "type": "script",
+        "src": "snip-cart-store.js",
+        "moduleType": "global",
+        "depends": {
+          "github.com/jquery/jquery:jquery.js": "jQuery"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "github.com/jquery/jquery": ">= 1.9.1, <= 1.10.2"
+  },
+  "options": {
+    "properties": {
+      "apiKey": {
+        "order": 0,
+        "title": "API Key",
+        "description": "Get this from <strong><a href=\"https://app.snipcart.com/dashboard/account/credentials\" target=\"_blank\" class=\"more with-inherited-color\">SnipCart’s Account Credentials page</a></strong>",
+        "type": "string",
+        "default": "YTNjYWVlODUtNzNhYi00ZWYzLTk2ODctYWZiOTRhZGFjMDg1"
+      },
+      "container": {
+        "order": 1,
+        "title": "Location",
+        "description": "Select where you want the embedded Store to be located.",
+        "type": "object",
+        "format": "element"
+      },
+      "products": {
+        "order": 2,
+        "title": "Products",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "notitle": true,
+          "properties": {
+            "title": {
+              "order": 1,
+              "title": "Title",
+              "type": "string",
+              "maxLength": 50,
+              "validationMessage": "The caption cannot be longer than 200 characters.",
+              "default": "Product Title"
+            },
+            "price": {
+              "order": 2,
+              "title": "Price",
+              "description": "Optionally set a price. If blank the price will be listed as “Free”.",
+              "type": "number",
+              "placeholder": 0.00,
+              "default": 9.99
+            },
+            "src": {
+              "order": 3,
+              "title": "Image",
+              "type": "string",
+              "format": "image"
+            }
+          },
+          "required": [
+            "src"
+          ]
+        },
+        "default": [
+          {
+            "title": "Smart Cover",
+            "price": 39,
+            "src": "//eager-app-images.imgix.net/85LNh8b3RrattvhHlsSa_smart-cover.jpeg"
+          },
+          {
+            "title": "Lightning Dock",
+            "price": 49,
+            "src": "//eager-app-images.imgix.net/8Y56s0Sj2gPp6iHmZACQ_lightning-dock.jpeg"
+          },
+          {
+            "title": "Magic Trackpad",
+            "price": 129,
+            "src": "//eager-app-images.imgix.net/VjkeUrBcQTqDgl9HF8ew_magic-trackpad.jpeg"
+          }
+        ]
+      },
+
+      "useAdvancedOptions": {
+        "order": 3,
+        "title": "Advanced Options",
+        "type": "boolean"
+      },
+      "advancedOptions": {
+        "order": 4,
+        "showIf": {
+          "useAdvancedOptions": true
+        },
+        "title": "Advanced Options",
+        "type": "object",
+        "properties": {
+          "keepUrlParameters": {
+            "title": "Use full URL (including all query params and hash)",
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

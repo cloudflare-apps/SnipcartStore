@@ -1,0 +1,46 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="snip-cart-store.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+
+<body style="font-family: Arial">
+  <script>
+    Eager = {
+      createElement: function() {
+        var el = document.createElement('eager-app');
+        document.body.appendChild(el);
+        return el;
+      }
+    };
+    INSTALL_OPTIONS = {
+      "apiKey": "YTNjYWVlODUtNzNhYi00ZWYzLTk2ODctYWZiOTRhZGFjMDg1",
+      "container": {
+        "selector": "body",
+        "method": "append"
+      },
+      "products": [
+        {
+          "title": "Smart Cover",
+          "price": 39,
+          "src": "//eager-app-images.imgix.net/85LNh8b3RrattvhHlsSa_smart-cover.jpeg"
+        },
+        {
+          "title": "Lightning Dock",
+          "price": 49,
+          "src": "//eager-app-images.imgix.net/8Y56s0Sj2gPp6iHmZACQ_lightning-dock.jpeg"
+        },
+        {
+          "title": "Magic Trackpad",
+          "price": 129,
+          "src": "//eager-app-images.imgix.net/VjkeUrBcQTqDgl9HF8ew_magic-trackpad.jpeg"
+        }
+      ],
+      "useAdvancedOptions": false,
+      "advancedOptions": {
+        "keepUrlParameters": false
+      }
+    };
+  </script>
+  <script src="snip-cart-store.js"></script>
+</body>
