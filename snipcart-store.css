@@ -1,0 +1,156 @@
+snipcart-store {
+  box-sizing: border-box !important;
+  background: #fff !important;
+  color: #333 !important;
+  display: block !important
+}
+
+snipcart-store snipcart-header {
+  box-sizing: border-box !important;
+  position: relative !important;
+  display: block !important;
+  padding: 1em !important;
+  border: 1px solid #ccc !important;
+  border-bottom: 0 !important
+}
+
+snipcart-store snipcart-header:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important
+}
+
+snipcart-store snipcart-store-title-wrapper {
+  height: 3em !important;
+  float: left !important
+}
+
+snipcart-store snipcart-store-title {
+  font-size: 1.5em !important;
+  line-height: 2em !important;
+  margin-left: .5em !important
+}
+
+snipcart-store a.snipcart-checkout {
+  box-sizing: border-box !important;
+  height: 3em !important;
+  float: right !important;
+  line-height: 1.7 !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  padding: .5em 1em !important;
+  overflow: hidden !important;
+  border-radius: 99em !important;
+  border: 1px solid #ccc !important
+}
+
+snipcart-store svg.snipcart-cart-icon {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  height: 2em !important;
+  width: 2em !important;
+  fill: currentColor !important
+}
+
+snipcart-store snipcart-total-items, snipcart-store snipcart-total-price {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  color: inherit !important
+}
+
+snipcart-store snipcart-total-items {
+  margin-right: 1em !important
+}
+
+snipcart-store snipcart-total-price {
+}
+
+snipcart-store snipcart-products {
+  box-sizing: border-box !important;
+  display: block !important;
+  padding-top: 1px !important;
+  padding-left: 1px !important
+}
+
+snipcart-store snipcart-products:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important
+}
+
+snipcart-store snipcart-product {
+  box-sizing: border-box !important;
+  text-align: center !important;
+  display: block !important;
+  float: left !important;
+  vertical-align: middle !important;
+  padding-right: 1px !important;
+  padding-bottom: 1px !important
+}
+
+snipcart-store[data-snipcart-store-columns="1"] snipcart-product { width: 100% !important }
+snipcart-store[data-snipcart-store-columns="2"] snipcart-product { width: 50% !important }
+snipcart-store[data-snipcart-store-columns="3"] snipcart-product { width: 33.3333% !important }
+snipcart-store[data-snipcart-store-columns="4"] snipcart-product { width: 25% !important }
+snipcart-store[data-snipcart-store-columns="5"] snipcart-product { width: 20% !important }
+snipcart-store[data-snipcart-store-columns="6"] snipcart-product { width: 16.6666% !important }
+snipcart-store[data-snipcart-store-columns="7"] snipcart-product { width: 14.2857% !important }
+snipcart-store[data-snipcart-store-columns="8"] snipcart-product { width: 12.5% !important }
+snipcart-store[data-snipcart-store-columns="9"] snipcart-product { width: 11.1111% !important }
+snipcart-store[data-snipcart-store-columns="10"] snipcart-product { width: 10% !important }
+
+snipcart-store a.snipcart-product-link {
+  position: relative !important;
+  box-shadow: 0 0 0 1px #ccc !important;
+  display: block !important
+}
+
+snipcart-store snipcart-product.snipcart-product-not-placeholder a.snipcart-product-link {
+  cursor: pointer !important
+}
+
+snipcart-store a.snipcart-product-link:hover {
+  z-index: 1 !important
+}
+
+snipcart-store snipcart-product-image {
+  box-sizing: content-box !important;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding-bottom: 100% !important
+}
+
+snipcart-store img.snipcart-product-img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 100% !important
+}
+
+snipcart-store snipcart-product-title, snipcart-store snipcart-product-price {
+  box-sizing: border-box !important;
+  color: inherit !important;
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important
+}
+
+snipcart-store snipcart-product-title {
+  font-weight: normal !important;
+  padding-top: 1em !important;
+  height: 2.5em !important;
+  padding-bottom: .25em !important
+}
+
+snipcart-store snipcart-product-price {
+  font-weight: bold !important;
+  height: 2.5em !important;
+  padding-bottom: 1.25em !important
+}
