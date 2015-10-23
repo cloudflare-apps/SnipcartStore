@@ -37,7 +37,7 @@
         "title": "API Key",
         "description": "Get this from <strong><a href=\"https://app.snipcart.com/dashboard/account/credentials\" target=\"_blank\" class=\"more with-inherited-color\">SnipCart’s Account Credentials page</a></strong>",
         "type": "string",
-        "default": "YTNjYWVlODUtNzNhYi00ZWYzLTk2ODctYWZiOTRhZGFjMDg1"
+        "placeholder": "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890987654321ABC"
       },
       "container": {
         "order": 2,
