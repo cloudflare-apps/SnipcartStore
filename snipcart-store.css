@@ -62,6 +62,10 @@ snipcart-store snipcart-total-items {
   margin-right: 1em !important
 }
 
+snipcart-store snipcart-total-items:empty {
+  margin-right: 0 !important
+}
+
 snipcart-store snipcart-total-price {
 }
 
@@ -107,29 +111,29 @@ snipcart-store snipcart-product:before {
   color: #fff !important
 }
 
-snipcart-store snipcart-product[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]):before {
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]):before {
   content: attr(data-snipcart-cart-quantity) " items in cart" !important
 }
 
-snipcart-store snipcart-product[data-snipcart-cart-quantity="1"]:not([data-snipcart-cart-quantity="0"]):before {
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity="1"]:not([data-snipcart-cart-quantity="0"]):before {
   content: attr(data-snipcart-cart-quantity) " item in cart" !important
 }
 
-snipcart-store snipcart-product[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]):hover:before,
-snipcart-store snipcart-product[data-snipcart-cart-quantity="1"]:not([data-snipcart-cart-quantity="0"]):hover:before,
-snipcart-store snipcart-product:hover:before {
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]):hover:before,
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity="1"]:not([data-snipcart-cart-quantity="0"]):hover:before,
+snipcart-store snipcart-product.snipcart-product-not-placeholder:hover:before {
   content: "Add to cart" !important
 }
 
-snipcart-store snipcart-product[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]) snipcart-product-image,
-snipcart-store snipcart-product:hover snipcart-product-image {
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]) snipcart-product-image,
+snipcart-store snipcart-product.snipcart-product-not-placeholder:hover snipcart-product-image {
   background: #000 !important;
   box-shadow: 0 0 0 1px #000 !important;
   z-index: 1 !important
 }
 
-snipcart-store snipcart-product[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]) snipcart-product-image img,
-snipcart-store snipcart-product:hover snipcart-product-image img {
+snipcart-store snipcart-product.snipcart-product-not-placeholder[data-snipcart-cart-quantity]:not([data-snipcart-cart-quantity="0"]) snipcart-product-image img,
+snipcart-store snipcart-product.snipcart-product-not-placeholder:hover snipcart-product-image img {
   opacity: .4 !important;
   z-index: 2 !important
 }
