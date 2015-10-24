@@ -128,7 +128,7 @@
       headerEl = document.createElement('snipcart-header');
       headerEl.innerHTML = (
         '<snipcart-store-title-wrapper>'+
-          '<snipcart-store-title>' + options.title + '</snipcart-store-title>'+
+          '<snipcart-store-title></snipcart-store-title>'+
         '</snipcart-store-title-wrapper>'+
         '<a class="snipcart-checkout">'+
           '<snipcart-summary class="snipcart-summary">' +
