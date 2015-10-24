@@ -3,7 +3,7 @@
     return '|title:' + product.title + '|price:' + product.price + '|';
   };
 
-  var setupSnipCartStyleLink = function(options) {
+  var setupSnipcartStyleLink = function(options) {
     var link = document.createElement('link');
     link.type = 'text/css';
     link.rel = 'stylesheet';
@@ -12,7 +12,7 @@
     document.head.appendChild(link);
   }
 
-  var setupSnipCartScripts = function(options) {
+  var setupSnipcartScripts = function(options) {
     var loadScript = function() {
       var script = document.createElement('script');
       script.type = 'text/javascript';
@@ -229,13 +229,13 @@
     }
   };
 
-  window.SnipCartStore = {
+  window.SnipcartStore = {
     init: function(options) {
       ready(function(){
-        setupSnipCartStyleLink(options);
+        setupSnipcartStyleLink(options);
         setupStyle(options);
         setupStore(options);
-        setupSnipCartScripts(options);
+        setupSnipcartScripts(options);
         setupEvents(options);
       });
     },

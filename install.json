@@ -11,7 +11,7 @@
       },
       {
         "type": "script",
-        "contents": "SnipCartStore.init(INSTALL_OPTIONS)"
+        "contents": "SnipcartStore.init(INSTALL_OPTIONS)"
       }
     ]
   },
@@ -26,7 +26,7 @@
       },
       {
         "options": ["container", "accentColor", "numColumns", "title", "products"],
-        "execute": "SnipCartStore.setOptions(INSTALL_OPTIONS)"
+        "execute": "SnipcartStore.setOptions(INSTALL_OPTIONS)"
       }
     ]
   },
@@ -35,7 +35,7 @@
       "apiKey": {
         "order": 1,
         "title": "API Key",
-        "description": "Get this from <strong><a href=\"https://app.snipcart.com/dashboard/account/credentials\" target=\"_blank\" class=\"more with-inherited-color\">SnipCart’s Account Credentials page</a></strong>",
+        "description": "Get this from <strong><a href=\"https://app.snipcart.com/dashboard/account/credentials\" target=\"_blank\" class=\"more with-inherited-color\">Snipcart’s Account Credentials page</a></strong>",
         "type": "string",
         "placeholder": "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890987654321ABC"
       },
